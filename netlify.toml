@@ -1,0 +1,43 @@
+# Netlify configuration for Next.js (OpenNext adapter)
+# Docs: https://docs.netlify.com/build/frameworks/framework-setup-guides/nextjs/overview/
+
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  # Node.js version
+  NODE_VERSION = "20"
+
+  # Enable Skew Protection (optional — prevents stale clients hitting new deploys)
+  # NETLIFY_NEXT_SKEW_PROTECTION = "true"
+
+# OpenNext adapter is auto-installed by Netlify — no manual pinning needed.
+# Uncomment below ONLY if you need to pin a specific adapter version:
+# [[plugins]]
+#   package = "@netlify/plugin-nextjs"
+
+# ─── Dev server (netlify dev) ────────────────────────────────────────────────
+[dev]
+  command = "npm run dev"
+  port = 3000
+  targetPort = 3000
+  framework = "#custom"
+
+# ─── Headers ─────────────────────────────────────────────────────────────────
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# ─── Redirects ───────────────────────────────────────────────────────────────
+# Next.js handles its own routing — no manual redirects needed here.
+# Add custom domain redirects below if required, e.g.:
+# [[redirects]]
+#   from = "https://www.yourdomain.com/*"
+#   to = "https://yourdomain.com/:splat"
+#   status = 301
+#   force = true
