@@ -5,7 +5,9 @@
       "Bash(which node; which npm; ls /usr/local/bin/npx 2>/dev/null; node --version 2>/dev/null; ls \"C:\\\\Cognizant\\\\Claude\\\\uigen\\\\node_modules\\\\.bin\\\\prisma\" 2>/dev/null; ls /c/Cognizant/Claude/uigen/node_modules/.bin/ 2>/dev/null | head -5)",
       "PowerShell(head -50)",
       "PowerShell(\\(Get-Command node -ErrorAction SilentlyContinue\\).Source; \\(Get-Command npm -ErrorAction SilentlyContinue\\).Source; \\(Get-Command npx -ErrorAction SilentlyContinue\\).Source)",
-      "PowerShell(Get-ChildItem \"C:\\\\Program Files\\\\nodejs\" -ErrorAction SilentlyContinue | Select-Object Name; Get-ChildItem \"$env:APPDATA\\\\npm\" -ErrorAction SilentlyContinue | Select-Object -First 5 Name; Get-ChildItem \"$env:ProgramFiles\\\\nodejs\" -ErrorAction SilentlyContinue | Select-Object -First 5 Name)"
+      "PowerShell(Get-ChildItem \"C:\\\\Program Files\\\\nodejs\" -ErrorAction SilentlyContinue | Select-Object Name; Get-ChildItem \"$env:APPDATA\\\\npm\" -ErrorAction SilentlyContinue | Select-Object -First 5 Name; Get-ChildItem \"$env:ProgramFiles\\\\nodejs\" -ErrorAction SilentlyContinue | Select-Object -First 5 Name)",
+      "Bash(git add *)",
+      "Bash(git push *)"
     ]
   }
 }
